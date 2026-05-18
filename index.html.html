@@ -306,16 +306,47 @@
       display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;
       flex-wrap: wrap; justify-content: center;
     }
-    .order-input {
-      flex: 1; min-width: 200px;
-      padding: 0.9rem 1.3rem; border-radius: 50px;
-      border: 2px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.1); color: white;
-      font-size: 0.95rem; outline: none;
-      transition: border-color 0.2s;
-    }
-    .order-input::placeholder { color: rgba(255,255,255,0.6); }
-    .order-input:focus { border-color: var(--yellow); }
+    .phone-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  width:320px;
+  margin:auto;
+  padding:12px 20px;
+
+  border:2px solid rgba(255,255,255,0.5);
+  border-radius:40px;
+
+  background:transparent;
+}
+
+.country-code{
+  display:flex;
+  align-items:center;
+
+  color:white;
+  font-size:1.1rem;
+  font-weight:bold;
+}
+
+.order-input{
+  width:100%;
+
+  border:none;
+  outline:none;
+
+  background:transparent;
+  color:white;
+
+  font-size:1rem;
+}
+
+.order-input::placeholder{
+  color:rgba(255,255,255,0.7);
+  font-size:0.95rem;
+}
     .order-btn {
       background: var(--yellow); color: var(--green-deep);
       border: none; padding: 0.9rem 2rem; border-radius: 50px;
@@ -586,7 +617,20 @@
   <h2 class="section-title">Ready for Fresh Coconuts?</h2>
   <p>Enter your phone number and we'll WhatsApp you to confirm your order instantly.</p>
   <div class="order-form">
-    <input class="order-input" type="tel" placeholder="Your phone number" />
+    <div class="phone-box">
+  <span class="country-code">+91</span>
+
+  <input
+    class="order-input"
+    type="tel"
+    placeholder="Enter 10 digit phonenumber"
+    maxlength="10"
+    pattern="[0-9]{10}"
+    inputmode="numeric"
+    oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)"
+    required
+  />
+</div>
     <button class="order-btn" onclick="handleOrder()">Order via WhatsApp</button>
   </div>
   <p style="margin-top:1.5rem; font-size:0.85rem; color:rgba(255,255,255,0.5)">Or call us directly: <strong style="color:var(--yellow)">+91 7904052399</strong></p>
