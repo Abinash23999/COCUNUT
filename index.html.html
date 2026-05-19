@@ -6,6 +6,94 @@
   <title>A S Tendercoconut Shop</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
+    /* ── LOCATION SECTION ── */
+.location-section {
+  background: var(--green-deep);
+  padding: 6rem 5%;
+  color: white;
+}
+.location-section .section-label { color: var(--yellow); }
+.location-section .section-title { color: white; margin-bottom: 0.8rem; }
+.location-section .section-sub { color: #a8d4ab; margin-bottom: 3rem; }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.location-info-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 2.5rem;
+}
+
+.loc-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.loc-item:last-child { border-bottom: none; padding-bottom: 0; }
+.loc-item:first-child { padding-top: 0; }
+
+.loc-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(245,200,66,0.15);
+  border: 1px solid rgba(245,200,66,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+
+.loc-label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--yellow);
+  margin-bottom: 0.3rem;
+}
+.loc-value {
+  font-size: 0.95rem; color: #d4f0d6; line-height: 1.6;
+}
+.loc-value a {
+  color: #d4f0d6; text-decoration: none;
+  transition: color 0.2s;
+}
+.loc-value a:hover { color: var(--yellow); }
+
+.map-wrapper {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  position: relative;
+}
+.map-wrapper iframe {
+  width: 100%; height: 420px;
+  border: none; display: block;
+}
+.map-overlay-btn {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  background: var(--yellow);
+  color: var(--green-deep);
+  font-weight: 700; font-size: 0.85rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.map-overlay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .location-grid { grid-template-columns: 1fr; }
+  .map-wrapper iframe { height: 300px; }
+}
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
