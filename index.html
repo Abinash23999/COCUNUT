@@ -33,7 +33,14 @@
             display: grid;
             grid-template-columns: 1fr 1.4fr;
             gap: 3rem;
-            align-items: start;
+            align-items: center;
+        }
+        
+        .location-info-card,
+        .map-wrapper {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .location-info-card {
@@ -884,52 +891,105 @@
             box-shadow: 0 8px 25px rgba(245, 200, 66, 0.4);
         }
         /* ── FOOTER ── */
+        /* ───────── FOOTER ───────── */
         
         footer {
+            width: 100%;
             background: var(--green-deep);
-            color: #a8d4ab;
-            padding: 3rem 5%;
+            padding: 4rem 5% 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+        }
+        
+        .footer-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Logo */
+        
+        .footer-logo,
+        .footer-brand {
+            text-align: center;
+            display: block;
         }
         
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 900;
             color: var(--yellow);
-            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
         }
         
-        footer p {
-            font-size: 0.85rem;
-            line-height: 1.8;
+        .footer-logo span {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: #b8e4bc;
+            text-transform: uppercase;
+            font-family: 'DM Sans', sans-serif;
         }
+        /* Footer text */
+        
+        footer p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #d4f0d6;
+            margin-top: 1rem;
+        }
+        /* Links */
         
         .footer-links {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 2rem;
-            margin: 1.5rem 0;
             flex-wrap: wrap;
+            margin: 2rem 0;
         }
         
         .footer-links a {
             color: #a8d4ab;
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
         
         .footer-links a:hover {
             color: var(--yellow);
         }
+        /* Bottom */
         
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 2rem;
             padding-top: 1.5rem;
-            font-size: 0.78rem;
-            color: #6a9b6e;
+            font-size: 0.85rem;
+            color: #8fc795;
+            text-align: center;
+            line-height: 1.7;
+        }
+        /* Mobile */
+        
+        @media (max-width:768px) {
+            .footer-logo {
+                font-size: 1.6rem;
+            }
+            .footer-links {
+                gap: 1rem;
+                flex-direction: column;
+            }
+            footer p {
+                font-size: 0.85rem;
+            }
+            .footer-bottom {
+                font-size: 0.78rem;
+            }
         }
         /* ── ANIMATIONS ── */
         
@@ -1103,7 +1163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product-card card-p3">
+            <div class="product-card card-p4">
                 <div class="coconut-circle">
                     <img src="coconut(1).png.jpeg" alt="Coconut">
                 </div>
@@ -1116,11 +1176,24 @@
                     </div>
                 </div>
             </div>
+            <div class="product-card card-p5">
+                <div class="coconut-circle">
+                    <img src="Sugar.png.jpeg" alt="Coconut">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">sugarcane juice</div>
+                    <div class="product-desc">Fresh sugarcane juice — naturally sweet and refreshing.</div>
+                    <div class="product-footer">
+                        <div class="product-price">₹25</div>
 
-    
-
+                    </div>
                 </div>
             </div>
+
+
+
+        </div>
+        </div>
         </div>
     </section>
 
@@ -1202,6 +1275,7 @@
             <h2 class="section-title">We Bring Freshness to You</h2>
             <ul class="delivery-items">
                 <li><span class="check">✔</span> Same-day delivery on orders placed before 4 PM</li>
+                <li><span class="check">✔</span> Fast online payment for quick order</li>
                 <li><span class="check">✔</span> Delivery within 2 hours in our service area</li>
                 <li><span class="check">✔</span> Free delivery on orders above ₹200</li>
                 <li><span class="check">✔</span> Real-time WhatsApp updates on your order</li>
@@ -1331,17 +1405,29 @@
 
             <!-- FOOTER -->
             <footer>
-                <div class="footer-logo">A S Tendercoconut Shop</div>
-                <p>Fresh tender coconuts delivered to your door.<br>Serving the freshest coconuts daily.</p>
-                <div class="footer-links">
-                    <a href="#products">Products</a>
-                    <a href="#how">How It Works</a>
-                    <a href="#delivery">Delivery</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#location">location</a>
+                <div class="footer-container">
+
+                    <div class="footer-logo">
+                        A S Tendercoconut Shop
+                    </div>
+
+                    <p>Fresh tender coconuts delivered to your door.</p>
+
+                    <div class="footer-links">
+                        <a href="#">Products</a>
+                        <a href="#">How It Works</a>
+                        <a href="#">Delivery</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Location</a>
+                    </div>
+
+                    <div class="footer-bottom">
+                        © 2026 A S Tendercoconut Shop
+                    </div>
+
                 </div>
-                <div class="footer-bottom">© 2026 A S Tendercoconut Shop. All rights reserved. Made with 🥥 and love.</div>
             </footer>
+
 
             <script>
                 function handleOrder() {
